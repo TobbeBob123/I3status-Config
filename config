@@ -1,0 +1,70 @@
+### Alt ### 
+general {
+        colors = true
+	interval = 5
+}
+
+### Display ### 
+#order += "ipv6"
+order += "cpu_usage"
+order += "wireless _first_"
+order += "ethernet _first_"
+order += "volume master"
+#order += "read_file Lystyrke"
+order += "battery all"
+#order += "disk /"
+#order += "load"
+order += "memory"
+order += "tztime date"
+order += "tztime local"
+
+wireless _first_ {
+        format_up = "W: %essid (%ip)"
+        format_down = "W: down"
+}
+
+#read_file Lystyrke {
+#	format = "L: %content"
+#	path = "/home/tobias/.config/Lysstyrke"
+#	max_characters = 5
+#}
+
+ethernet _first_ {
+        format_up = "E: %ip"
+        format_down = "E: down"
+}
+
+battery all {
+        format = " %status %percentage %remaining"
+}
+
+disk "/" {
+        format = "%avail"
+}
+
+load {
+        format = "%1min"
+}
+
+memory {
+        format = "%used"
+        threshold_degraded = "1G"
+        format_degraded = "MEMORY < %available"
+}
+
+tztime date {
+        format = "D: %d.%m.%Y"
+}
+
+tztime local {
+	format = "Kl: %H:%M"
+}
+
+volume master {
+	format = "V: %volume"
+	format_muted = "V: muted"
+}
+
+cpu_usage {
+	format = "CPU: %usage"
+}
