@@ -16,7 +16,7 @@ order += "battery all"
 #order += "load"
 order += "memory"
 order += "tztime date"
-order += "tztime local"
+order += "tztime time"
 
 wireless _first_ {
         format_up = "W: %essid (%ip)"
@@ -56,7 +56,7 @@ tztime date {
         format = "D: %d.%m.%Y"
 }
 
-tztime local {
+tztime time {
 	format = "Kl: %H:%M"
 }
 
